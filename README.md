@@ -42,3 +42,6 @@
 *   卡片hover效果：鼠标悬停时卡片向上移动并增加阴影
 ​
 确保页面具有响应式布局，可以在不同设备上正常显示。
+
+Reference:
+[在网页中插入高德地图插件](https://blog.csdn.net/qq_42445490/article/details/89155610?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1)
