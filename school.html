@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青浦新城地铁站周边小学推荐</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <style>
+        :root {
+            --primary-color: #6f4e37;
+            --secondary-color: #f5f5dc;
+            --accent-color: #d4a76a;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .subtitle {
+            color: var(--secondary-color);
+        }
+        
+        .update-time {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+        
+        .map-container {
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .school-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 25px;
+        }
+        
+        .school-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+        }
+        
+        .school-image {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .school-name {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .school-location {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+        
+        .school-type {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .public {
+            background-color: #e7f5ff;
+            color: #1971c2;
+        }
+        
+        .private {
+            background-color: #fff3bf;
+            color: #e67700;
+        }
+        
+        .semi-public {
+            background-color: #f3f0ff;
+            color: #5f3dc4;
+        }
+        
+        .card-text {
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        #container {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="container">
+            <h1 class="display-4">青浦新城地铁站周边小学</h1>
+            <p class="subtitle lead">上海五大新城之一，未来潜力无限</p>
+            <p class="update-time" id="update-time">更新时间: </p>
+        </div>
+    </header>
+
+    <!-- 地图 -->
+    <section class="container">
+        <h2 class="section-title">地理位置分布</h2>
+        <div class="map-container">
+            <div id="container"></div>
+        </div>
+    </section>
+
+    <!-- 小学列表 -->
+    <section class="container">
+        <h2 class="section-title">精选小学推荐</h2>
+        <div class="row">
+            <!-- 学校1 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=上海市青浦佳禾小学" class="school-image" alt="上海市青浦佳禾小学"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">上海市青浦佳禾小学</h5>
+                        <span class="school-type public">公立</span>
+                        <p class="school-location">盈港路71号（青浦新城地铁站3号口步行310米）</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>佳禾小学是青浦区新城区域的重点小学，建于2010年，硬件设施完善，注重素质教育。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>在青浦区内口碑良好，被认为是新城地区的优质小学之一。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>毕业生主要升入青浦区内的重点初中。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>需要在学区内有合法固定住所，且户口或居住证在该区域。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>盈港路、赵巷路、青浦新城地铁站附近区域。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校2 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=青浦区实验小学(城中校区)" class="school-image" alt="青浦区实验小学(城中校区)"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">青浦区实验小学(城中校区)</h5>
+                        <span class="school-type public">公立</span>
+                        <p class="school-location">城中西路25号</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>青浦区实验小学是区内历史最悠久的学校之一，拥有百年办学历史，是区内的示范性小学。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>在青浦区乃至上海市都享有较高声誉，被公认为区内最优质的公立小学之一。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>毕业生升学率高，多数能进入区内重点初中。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>学区内户籍或满足居住证积分要求，入学竞争较为激烈。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>城中西路、公园路、南大街等区域。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校3 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=上海市青浦区实验小学青湖校区" class="school-image" alt="上海市青浦区实验小学青湖校区"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">上海市青浦区实验小学青湖校区</h5>
+                        <span class="school-type public">公立</span>
+                        <p class="school-location">青湖路459号</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>作为青浦区实验小学的分校区，继承了优良传统，校园环境优美，设施先进。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>作为实验小学分校，教学质量有保障，在区域内评价良好。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>与实验小学城中校区类似，毕业生大多能进入区内优质初中。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>需符合学区房要求，户籍或居住证需满足条件。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>青湖路及周边区域，新城区东部区域。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校4 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=上海政法学院附属青浦东门小学" class="school-image" alt="上海政法学院附属青浦东门小学"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">上海政法学院附属青浦东门小学</h5>
+                        <span class="school-type public">公立</span>
+                        <p class="school-location">城中东路48号</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>依托上海政法学院资源办学，注重法制教育和学生综合能力培养。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>在区内口碑良好，以严谨的教学风格和较高的教学质量著称。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>毕业生主要升入区内各初中，成绩处于中上水平。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>符合学区要求，户籍或有效居住证，部分跨区学生需参考积分情况。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>城中东路、城东路沿线区域。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校5 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=上海市佳信学校" class="school-image" alt="上海市佳信学校"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">上海市佳信学校</h5>
+                        <span class="school-type private">私立</span>
+                        <p class="school-location">青赵公路952号</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>佳信学校是一所九年一贯制民办学校，注重国际化教育理念。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>作为民办学校，教学质量和管理较为严格，收费相对较高。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>学生可直升佳信初中部，也可选择参加其他公办初中的入学考试。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>不受学区限制，需参加入学考试和面试，择优录取，收费较高。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>不限学区，面向全区招生。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校6 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=青浦瀚文小学" class="school-image" alt="青浦瀚文小学"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">青浦瀚文小学</h5>
+                        <span class="school-type public">公立</span>
+                        <p class="school-location">卫中路1号</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>瀚文小学是青浦区的一所特色学校，以传统文化教育为特色。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>在区内有较好口碑，以国学教育和语文教学见长。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>毕业生主要升入区内各初中，语文学科成绩普遍较好。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>符合学区要求，户籍或有效居住证。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>卫中路、悦盈路等区域。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校7 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=青浦区崧文小学" class="school-image" alt="青浦区崧文小学"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">青浦区崧文小学</h5>
+                        <span class="school-type public">公立</span>
+                        <p class="school-location">崧涵路55号</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>崧文小学是青浦区较新的一所公办小学，致力于创新教育模式。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>作为新建学校，硬件设施优良，教育理念新颖。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>作为较新学校，升学数据尚在积累中。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>符合学区房要求，对应区域户籍或居住证。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>崧涵路及附近新建小区区域。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 学校8 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="school-card">
+                    <!-- <img src="https://via.placeholder.com/400x200/6f4e37/FFFFFF?text=复旦五浦汇实验学校" class="school-image" alt="复旦五浦汇实验学校"> -->
+                    <div class="card-body">
+                        <h5 class="school-name">复旦五浦汇实验学校</h5>
+                        <span class="school-type semi-public">公办民营</span>
+                        <p class="school-location">盘龙浦路500号B区</p>
+                        <p class="card-text"><span class="info-label">学校简介：</span>由复旦大学与青浦区合作创办，采用九年一贯制教育模式。</p>
+                        <p class="card-text"><span class="info-label">外界评价：</span>作为复旦品牌下的学校，受到家长高度关注。</p>
+                        <p class="card-text"><span class="info-label">升学情况：</span>小学毕业生可直升本校初中部，部分优秀学生有机会获得复旦附中推荐资格。</p>
+                        <p class="card-text"><span class="info-label">入学条件：</span>招生不完全受学区限制，需参加学校组织的面试和能力测试。</p>
+                        <p class="card-text"><span class="info-label">学区范围：</span>主要面向五浦汇区域，但也接受部分非学区优秀学生。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 入学建议 -->
+    <section class="container">
+        <h2 class="section-title">入学建议</h2>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <ol>
+                            <li>公立学校入学通常以学区房为主要条件，建议提前了解各学校的具体学区划分</li>
+                            <li>私立学校如佳信学校则需要参加考试，不受学区限制但收费较高</li>
+                            <li>部分学校可能有特长生招生计划，如有特长可关注相关信息</li>
+                            <li>入学政策可能随年份略有调整，建议随时关注青浦区教育局官方发布的最新招生政策</li>
+                        </ol>
+                        <p class="text-center text-muted mt-3">以上信息仅供参考，具体入学政策和学区划分请以青浦区教育局最新公布为准。建议您亲自走访这些学校，了解更详细的信息。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 算力小镇住宿推荐 | 数据来源: 高德地图 | 制作：LucianaiB</p>
+        </div>
+    </footer>
+
+    <!-- 高德地图 JS -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=93a052e799bb6156b424be5a345f6539"></script>
+    
+    <!-- Bootstrap 5 JS 和 Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 地图初始化脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新时间
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+            document.getElementById('update-time').textContent += `${year}年${month}月${day}日`;
+            
+            // 初始化地图
+            var map = new AMap.Map("container", {
+                zoom: 13, //设置地图显示的缩放级别
+                center: [121.125670, 31.158925] //更新为地铁站的准确位置
+            });
+    
+            // 学校数据
+            var schools = [
+                {
+                    position: [121.125670, 31.158925], // 更新为地铁站的准确位置
+                    title: "青浦新城地铁站",
+                    content: "<div><b>青浦新城地铁站</b><br>中心参考点</div>",
+                    isMetro: true // 标记是否为地铁站
+                },
+                {
+                    position: [121.122468, 31.157821],
+                    title: "上海市青浦佳禾小学",
+                    content: "<div><b>上海市青浦佳禾小学</b><br>地址：盈港路71号<br>距离地铁站：约310米</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.115846, 31.153695],
+                    title: "庆华小学",
+                    content: "<div><b>庆华小学</b><br>地址：青赵公路78号</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.124719, 31.147523],
+                    title: "上海政法学院附属青浦东门小学",
+                    content: "<div><b>上海政法学院附属青浦东门小学</b><br>地址：城中东路48号</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.109995, 31.157594],
+                    title: "青浦区逸夫小学",
+                    content: "<div><b>青浦区逸夫小学</b><br>地址：青浦镇万寿路230号</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.107719, 31.150767],
+                    title: "青浦瀚文小学",
+                    content: "<div><b>青浦瀚文小学</b><br>地址：卫中路1号</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.106548, 31.151537],
+                    title: "上海市佳信学校(盈中北路校区)",
+                    content: "<div><b>上海市佳信学校(盈中北路校区)</b><br>地址：悦盈路与卫中路交叉口西80米</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.140488, 31.144453],
+                    title: "上海市青浦区实验小学青湖校区",
+                    content: "<div><b>上海市青浦区实验小学青湖校区</b><br>地址：青湖路459号</div>",
+                    isMetro: false
+                },
+                {
+                    position: [121.110608, 31.145843],
+                    title: "青浦区实验小学(城中校区)",
+                    content: "<div><b>青浦区实验小学(城中校区)</b><br>地址：城中西路25号</div>",
+                    isMetro: false
+                }
+            ];
+            
+            // 创建红色图标用于地铁站
+            var redIcon = new AMap.Icon({
+                size: new AMap.Size(25, 34),
+                image: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png',
+                imageSize: new AMap.Size(25, 34)
+            });
+    
+            // 创建标记和信息窗体
+            schools.forEach(function(school, index) {
+                // 创建标记
+                var markerOptions = {
+                    position: new AMap.LngLat(school.position[0], school.position[1]),
+                    title: school.title,
+                    map: map,
+                    label: {
+                        content: school.title,
+                        direction: 'right',
+                        offset: new AMap.Pixel(5, 0)
+                    }
+                };
+                
+                // 为地铁站添加红色图标
+                if (school.isMetro) {
+                    markerOptions.icon = redIcon;
+                }
+                
+                var marker = new AMap.Marker(markerOptions);
+                
+                // 创建信息窗体
+                var infoWindow = new AMap.InfoWindow({
+                    content: school.content,
+                    offset: new AMap.Pixel(0, -30)
+                });
+                
+                // 绑定事件
+                marker.on('click', function() {
+                    infoWindow.open(map, marker.getPosition());
+                });
+                
+                // 打开第一个标记的信息窗体(地铁站)
+                if (index === 0) {
+                    infoWindow.open(map, marker.getPosition());
+                }
+            });
+        });
+    </script>
+</body>
+</html>

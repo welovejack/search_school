@@ -1,0 +1,134 @@
+<!-- 二、设置宽和高-->
+<head>
+    <meta charset="UTF-8">
+    <title>青浦新城周边小学地图</title>
+    <style>
+	    #container{
+		    width: 800px;
+		    height: 600px;
+	    }
+    </style>
+</head>
+ 
+<body>
+    <!-- 一、新建一个容器 -->
+    <div id="container" ></div>
+    <h2>青浦新城周边小学分布地图</h2>
+</body>
+ 
+<!--三、引入高德地图的js-->
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=93a052e799bb6156b424be5a345f6539"></script>
+ 
+<!--四、异步初始化高德地图插件-->
+<script>
+	//初始化地图插件
+	window.onload = function(){
+	    var map = new AMap.Map("container", {
+            zoom: 13, //设置地图显示的缩放级别
+            center: [121.125670, 31.158925] //更新为地铁站的准确位置
+         });
+ 
+        // 学校数据
+        var schools = [
+            {
+                position: [121.125670, 31.158925], // 更新为地铁站的准确位置
+                title: "青浦新城地铁站",
+                content: "<div><b>青浦新城地铁站</b><br>中心参考点</div>",
+                isMetro: true // 标记是否为地铁站
+            },
+            {
+                position: [121.122468, 31.157821],
+                title: "上海市青浦佳禾小学",
+                content: "<div><b>上海市青浦佳禾小学</b><br>地址：盈港路71号<br>距离地铁站：约310米</div>",
+                isMetro: false
+            },
+            {
+                position: [121.115846, 31.153695],
+                title: "庆华小学",
+                content: "<div><b>庆华小学</b><br>地址：青赵公路78号</div>",
+                isMetro: false
+            },
+            {
+                position: [121.124719, 31.147523],
+                title: "上海政法学院附属青浦东门小学",
+                content: "<div><b>上海政法学院附属青浦东门小学</b><br>地址：城中东路48号</div>",
+                isMetro: false
+            },
+            {
+                position: [121.109995, 31.157594],
+                title: "青浦区逸夫小学",
+                content: "<div><b>青浦区逸夫小学</b><br>地址：青浦镇万寿路230号</div>",
+                isMetro: false
+            },
+            {
+                position: [121.107719, 31.150767],
+                title: "青浦瀚文小学",
+                content: "<div><b>青浦瀚文小学</b><br>地址：卫中路1号</div>",
+                isMetro: false
+            },
+            {
+                position: [121.106548, 31.151537],
+                title: "上海市佳信学校(盈中北路校区)",
+                content: "<div><b>上海市佳信学校(盈中北路校区)</b><br>地址：悦盈路与卫中路交叉口西80米</div>",
+                isMetro: false
+            },
+            {
+                position: [121.140488, 31.144453],
+                title: "上海市青浦区实验小学青湖校区",
+                content: "<div><b>上海市青浦区实验小学青湖校区</b><br>地址：青湖路459号</div>",
+                isMetro: false
+            },
+            {
+                position: [121.110608, 31.145843],
+                title: "青浦区实验小学(城中校区)",
+                content: "<div><b>青浦区实验小学(城中校区)</b><br>地址：城中西路25号</div>",
+                isMetro: false
+            }
+        ];
+        
+        // 创建红色图标用于地铁站
+        var redIcon = new AMap.Icon({
+            size: new AMap.Size(25, 34),
+            image: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png',
+            imageSize: new AMap.Size(25, 34)
+        });
+
+        // 创建标记和信息窗体
+        schools.forEach(function(school, index) {
+            // 创建标记
+            var markerOptions = {
+                position: new AMap.LngLat(school.position[0], school.position[1]),
+                title: school.title,
+                map: map,
+                label: {
+                    content: school.title,
+                    direction: 'right',
+                    offset: new AMap.Pixel(5, 0)
+                }
+            };
+            
+            // 为地铁站添加红色图标
+            if (school.isMetro) {
+                markerOptions.icon = redIcon;
+            }
+            
+            var marker = new AMap.Marker(markerOptions);
+            
+            // 创建信息窗体
+            var infoWindow = new AMap.InfoWindow({
+                content: school.content,
+                offset: new AMap.Pixel(0, -30)
+            });
+            
+            // 绑定事件
+            marker.on('click', function() {
+                infoWindow.open(map, marker.getPosition());
+            });
+            
+            // 打开第一个标记的信息窗体(地铁站)
+            if (index === 0) {
+                infoWindow.open(map, marker.getPosition());
+            }
+        });
+	}
+</script>
